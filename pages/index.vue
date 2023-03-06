@@ -27,7 +27,6 @@ const features = [
 ]
 
 definePageMeta({
-  title: 'MePort | Home',
   name: 'Home',
 })
 </script>

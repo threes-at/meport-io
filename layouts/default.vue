@@ -181,12 +181,10 @@ const route = useRoute()
 const mobileMenuOpen = ref(false)
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Pricing', href: '#' },
+  { name: 'Pricing', href: '/pricing' },
   { name: 'Docs', href: '#' },
   { name: 'Join the beta', href: '/join-beta' },
 ]
-
 
 const footerNav = {
   solutions: [
@@ -284,4 +282,5 @@ const footerNav = {
     },
   ],
 }
+
 </script>
