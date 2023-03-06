@@ -8,7 +8,6 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxtjs/robots",
     "nuxt-icon",
-    "@nuxt/image-edge",
   ],
   postcss: {
     plugins: {
