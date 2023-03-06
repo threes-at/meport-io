@@ -29,7 +29,7 @@
         <div class="flex items-center justify-between">
           <a href="#" class="-m-1.5 p-1.5">
             <span class="sr-only">Your Company</span>
-            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+            <img class="h-12 w-auto" src="/images/icon-512-maskable.png" alt="" />
           </a>
           <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
             <span class="sr-only">Close menu</span>
@@ -44,9 +44,8 @@
                   item.name }}</a>
             </div>
             <div class="py-6">
-              <a href="#"
-                class="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log
-                in</a>
+              <a href="https://app.meport.io"
+                class="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
             </div>
           </div>
         </div>
@@ -167,7 +166,7 @@
             <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
           </a>
         </div>
-        <p class="mt-8 text-xs leading-5 text-gray-500 md:order-1 md:mt-0">&copy; 2020 Your Company, Inc. All rights reserved.</p>
+        <p class="mt-8 text-xs leading-5 text-gray-500 md:order-1 md:mt-0">&copy; {{ new Date().getFullYear() }} MePort. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -183,9 +182,9 @@ const mobileMenuOpen = ref(false)
 
 const navigation = [
   { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'Pricing', href: '#' },
+  { name: 'Docs', href: '#' },
+  { name: 'Join the beta', href: '/join-beta' },
 ]
 
 

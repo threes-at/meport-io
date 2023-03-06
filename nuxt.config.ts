@@ -14,5 +14,21 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
+  },
+  app: {
+    head: {
+      script: [
+        {
+          src: "https://app.meport.io/st.js",
+          tagPriority: 'critical',
+        },
+        {
+          innerHTML: `
+            const Meport = new PageTracker("https://meport-5733xnph2q-ey.a.run.app")
+            Meport.init()
+          `
+        }
+      ]
+    }
   }
 })
