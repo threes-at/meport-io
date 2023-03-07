@@ -23,7 +23,9 @@
 
 
 
-    <form name="beta" method="POST" data-netlify="true" class="mx-auto mt-16 max-w-xl sm:mt-20">
+    <form name="beta" @submit.prevent="handleSubmit" class="mx-auto mt-16 max-w-xl sm:mt-20">
+      <input type="hidden" name="form-name" value="beta" />
+
       <div class="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
         <div>
           <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">First name</label>
@@ -91,6 +93,31 @@
 import { Switch, SwitchGroup, SwitchLabel } from '@headlessui/vue';
 
 const agreed = ref(false)
+
+const firstName = ref('')
+const lastName = ref('')
+const company = ref('')
+const email = ref('')
+const message = ref('')
+
+const encode = (data: any) => {
+  return Object.keys(data).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&')
+}
+
+const handleSubmit = () => {
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: encode({ 
+      "form-name": "beta",
+      firstName: firstName.value,
+      lastName: lastName.value,
+      company: company.value,
+      email: email.value,
+      message: message.value
+    })
+  })
+}
 
 </script>
   
