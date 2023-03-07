@@ -23,27 +23,8 @@
 
 
 
-    <form name="beta-waitlist" @submit.prevent="handleFormSubmit" data-netlify="true"
+    <form name="beta-waitlist" method="POST" data-netlify="true"
       class="mx-auto mt-16 max-w-xl sm:mt-20">
-      <div v-if="isSuccess" class="rounded-md bg-green-50 p-4 mb-10">
-        <div class="flex">
-          <div class="flex-shrink-0">
-            <CheckCircleIcon class="h-5 w-5 text-green-400" aria-hidden="true" />
-          </div>
-          <div class="ml-3">
-            <p class="text-sm font-medium text-green-800">Successfully applied</p>
-          </div>
-          <div class="ml-auto pl-3">
-            <div class="-mx-1.5 -my-1.5">
-              <button type="button"
-                class="inline-flex rounded-md bg-green-50 p-1.5 text-green-500 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-green-50">
-                <span class="sr-only">Dismiss</span>
-                <XMarkIcon class="h-5 w-5" aria-hidden="true" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
         <div>
           <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">First name</label>
@@ -110,26 +91,7 @@
 <script setup lang="ts">
 import { Switch, SwitchGroup, SwitchLabel } from '@headlessui/vue';
 
-const isSuccess = ref(false)
-
 const agreed = ref(false)
-
-const handleFormSubmit = (event: any) => {
-  event.preventDefault()
-  const form = event.target
-  const formData = new FormData(form)
-
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    // @ts-expect-error - FormData doesn't have a toString method
-    body: new URLSearchParams(formData).toString(),
-  }).then(() => {
-    isSuccess.value = true
-  }).catch(err => {
-    alert(err)
-  })
-}
 
 </script>
   
