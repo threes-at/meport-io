@@ -23,7 +23,7 @@
 
 
 
-    <form name="beta-waitlist" action="/join-beta?success" method="POST" data-netlify="true"
+    <form name="beta-waitlist" @submit.prevent="handleFormSubmit" data-netlify="true"
       class="mx-auto mt-16 max-w-xl sm:mt-20">
       <div v-if="isSuccess" class="rounded-md bg-green-50 p-4 mb-10">
         <div class="flex">
@@ -110,11 +110,26 @@
 <script setup lang="ts">
 import { Switch, SwitchGroup, SwitchLabel } from '@headlessui/vue';
 
-const route = useRoute()
-
-const isSuccess = computed(() => Object.keys(route.query).includes('success'))
+const isSuccess = ref(false)
 
 const agreed = ref(false)
+
+const handleFormSubmit = (event: any) => {
+  event.preventDefault()
+  const form = event.target
+  const formData = new FormData(form)
+
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    // @ts-expect-error - FormData doesn't have a toString method
+    body: new URLSearchParams(formData).toString(),
+  }).then(() => {
+    isSuccess.value = true
+  }).catch(err => {
+    alert(err)
+  })
+}
 
 </script>
   
