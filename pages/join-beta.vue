@@ -23,8 +23,7 @@
 
 
 
-    <form name="beta-waitlist" method="POST" data-netlify="true"
-      class="mx-auto mt-16 max-w-xl sm:mt-20">
+    <form name="beta" method="POST" data-netlify="true" class="mx-auto mt-16 max-w-xl sm:mt-20">
       <div class="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
         <div>
           <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">First name</label>
