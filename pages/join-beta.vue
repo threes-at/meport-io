@@ -21,37 +21,44 @@
         are ready.</p>
     </div>
 
+    <form name="beta" @submit.prevent="handleSubmit" class="mx-auto mt-12 max-w-xl sm:mt-18">
+      <div v-if="success" class="flex flex-col items-center justify-center p-8 space-y-4 text-center bg-green-50 mb-6">
+        <svg class="w-12 h-12 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M5 13l4 4L19 7"></path>
+        </svg>
+        <p class="text-lg font-medium text-green-800">Thank you for your interest!</p>
+        <p class="text-sm text-gray-500">We will get in touch once we are ready.</p>
+      </div>
 
-
-    <form name="beta" @submit.prevent="handleSubmit" class="mx-auto mt-16 max-w-xl sm:mt-20">
       <input type="hidden" name="form-name" value="beta" />
 
       <div class="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
         <div>
           <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">First name</label>
           <div class="mt-2.5">
-            <input required type="text" name="first-name" id="first-name" autocomplete="given-name"
+            <input v-model="firstName" required type="text" name="first-name" id="first-name" autocomplete="given-name"
               class="block w-full rounded-md border-0 py-2 px-3.5 text-sm leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600" />
           </div>
         </div>
         <div>
           <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900">Last name</label>
           <div class="mt-2.5">
-            <input required type="text" name="last-name" id="last-name" autocomplete="family-name"
+            <input v-model="lastName" required type="text" name="last-name" id="last-name" autocomplete="family-name"
               class="block w-full rounded-md border-0 py-2 px-3.5 text-sm leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600" />
           </div>
         </div>
         <div class="sm:col-span-2">
           <label for="company" class="block text-sm font-semibold leading-6 text-gray-900">Company</label>
           <div class="mt-2.5">
-            <input required type="text" name="company" id="company" autocomplete="organization"
+            <input v-model="company" required type="text" name="company" id="company" autocomplete="organization"
               class="block w-full rounded-md border-0 py-2 px-3.5 text-sm leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600" />
           </div>
         </div>
         <div class="sm:col-span-2">
           <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">Email</label>
           <div class="mt-2.5">
-            <input required type="email" name="email" id="email" autocomplete="email"
+            <input v-model="email" required type="email" name="email" id="email" autocomplete="email"
               class="block w-full rounded-md border-0 py-2 px-3.5 text-sm leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600" />
           </div>
         </div>
@@ -59,7 +66,7 @@
           <label for="message" class="block text-sm font-semibold leading-6 text-gray-900">Why you want to try
             MePort?</label>
           <div class="mt-2.5">
-            <textarea name="message" id="message" rows="4"
+            <textarea v-model="message" name="message" id="message" rows="4"
               class="block w-full rounded-md border-0 py-2 px-3.5 text-sm leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600" />
           </div>
         </div>
@@ -93,6 +100,7 @@
 import { Switch, SwitchGroup, SwitchLabel } from '@headlessui/vue';
 
 const agreed = ref(false)
+const success = ref(false)
 
 const firstName = ref('')
 const lastName = ref('')
@@ -105,6 +113,7 @@ const encode = (data: any) => {
 }
 
 const handleSubmit = () => {
+  if (!agreed.value) return
   fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
