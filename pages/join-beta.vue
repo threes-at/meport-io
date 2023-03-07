@@ -23,7 +23,7 @@
 
 
 
-    <form name="beta-waitlist" action="/join-beta?success=true" method="POST" data-netlify="true"
+    <form name="beta-waitlist" action="/join-beta?success" method="POST" data-netlify="true"
       class="mx-auto mt-16 max-w-xl sm:mt-20">
       <div v-if="isSuccess" class="rounded-md bg-green-50 p-4 mb-10">
         <div class="flex">
@@ -112,7 +112,7 @@ import { Switch, SwitchGroup, SwitchLabel } from '@headlessui/vue';
 
 const route = useRoute()
 
-const isSuccess = computed(() => route.query.success === 'true')
+const isSuccess = computed(() => Object.keys(route.query).includes('success'))
 
 const agreed = ref(false)
 
