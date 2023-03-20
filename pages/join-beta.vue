@@ -117,6 +117,7 @@ const handleSubmit = () => {
   if (!agreed.value) return
 
   splitbee.user.set({
+    userId: email.value,
     email: email.value,
   })
 
