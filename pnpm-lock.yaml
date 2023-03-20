@@ -5,6 +5,7 @@ specifiers:
   '@heroicons/vue': ^2.0.16
   '@nuxtjs/robots': ^3.0.0
   '@nuxtjs/tailwindcss': ^6.4.1
+  '@splitbee/web': ^0.3.0
   '@tailwindcss/forms': ^0.5.3
   '@tailwindcss/typography': ^0.5.9
   autoprefixer: ^10.4.13
@@ -16,6 +17,7 @@ specifiers:
 dependencies:
   '@headlessui/vue': 1.7.12
   '@heroicons/vue': 2.0.16
+  '@splitbee/web': 0.3.0
 
 devDependencies:
   '@nuxtjs/robots': 3.0.0
@@ -1652,6 +1654,10 @@ packages:
       picomatch: 2.3.1
       rollup: 3.18.0
     dev: true
+
+  /@splitbee/web/0.3.0:
+    resolution: {integrity: sha512-jNPDKg0GQGa4jCaBc6JQsv0NHmBA80WCwZE49nFyhcbo32WF0GyqXeice7ZApy7OUHI16bAUAzm4MOQw3gvxfQ==}
+    dev: false
 
   /@tailwindcss/forms/0.5.3_tailwindcss@3.2.7:
     resolution: {integrity: sha512-y5mb86JUoiUgBjY/o6FJSFZSEttfb3Q5gllE4xoKjAAD+vBrnIhE4dViwUuow3va8mpH4s9jyUbUbrRGoRdc2Q==}
