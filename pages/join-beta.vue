@@ -94,11 +94,9 @@
     </form>
   </div>
 </template>
-  
-  
+
 <script setup lang="ts">
 import { Switch, SwitchGroup, SwitchLabel } from '@headlessui/vue';
-import splitbee from '@splitbee/web';
 
 const agreed = ref(false)
 const success = ref(false)
@@ -115,11 +113,6 @@ const encode = (data: any) => {
 
 const handleSubmit = () => {
   if (!agreed.value) return
-
-  splitbee.user.set({
-    userId: email.value,
-    email: email.value,
-  })
 
   fetch("/", {
     method: "POST",
