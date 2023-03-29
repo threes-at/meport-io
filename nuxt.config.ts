@@ -28,7 +28,7 @@ export default defineNuxtConfig({
         {
           src: 'https://dev.meport.pages.dev/sbun.js',
           tagPriority: 'critical',
-          'data-api': 'https://sectrack-5733xnph2q-ew.a.run.app'
+          'data-api': 'https://sectrack-5733xnph2q-ew.a.run.app/api/v1'
         }
       ]
     }
