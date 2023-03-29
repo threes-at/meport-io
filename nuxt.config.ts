@@ -26,14 +26,9 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/png', href: "/favicon.png" }],
       script: [
         {
-          src: "https://app.meport.io/st.js",
+          src: 'https://dev.meport.pages.dev/sbun.js',
           tagPriority: 'critical',
-        },
-        {
-          innerHTML: `
-            const Meport = new PageTracker("https://meport-5733xnph2q-ey.a.run.app")
-            Meport.init()
-          `
+          'data-api': 'https://sectrack-5733xnph2q-ew.a.run.app'
         }
       ]
     }
