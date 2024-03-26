@@ -1,20 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  css: ["~/assets/css/main.css"],
-  typescript: {
-    shim: false
-  },
+  devtools: { enabled: true },
   modules: [
     "@nuxtjs/tailwindcss",
-    "@nuxtjs/robots",
+    "@nuxt/image",
+    "@nuxt/test-utils",
     "nuxt-icon",
+    "@nuxtjs/sitemap"
   ],
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  },
   app: {
     head: {
       charset: "utf-8",
@@ -24,13 +17,13 @@ export default defineNuxtConfig({
         { name: "description", content: "Privacy-first analytics, performance insights and web vitals for your website or application with our lightweight tools." }
       ],
       link: [{ rel: 'icon', type: 'image/png', href: "/favicon.png" }],
-      script: [
-        {
-          src: 'https://dev.meport.pages.dev/sbun.js',
-          tagPriority: 'critical',
-          'data-api': 'https://sectrack-5733xnph2q-ew.a.run.app/api/v1'
-        }
-      ]
+      // script: [
+      //   {
+      //     src: 'https://dev.meport.pages.dev/sbun.js',
+      //     tagPriority: 'critical',
+      //     'data-api': 'https://sectrack-5733xnph2q-ew.a.run.app/api/v1'
+      //   }
+      // ]
     }
   }
 })
