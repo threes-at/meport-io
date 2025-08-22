@@ -2,7 +2,7 @@
   <div class="relative isolate px-6 pt-24 sm:pt-40 lg:px-8">
     <div class="absolute inset-0 -z-10 overflow-hidden">
       <svg viewBox="0 0 1155 678" aria-hidden="true"
-        class="absolute bottom-full -left-40 -mb-48 w-[72.1875rem] transform-gpu blur-3xl sm:left-auto sm:right-1/2 sm:-mb-64">
+        class="absolute bottom-full -left-40 -mb-48 w-288.75 transform-gpu blur-3xl sm:left-auto sm:right-1/2 sm:-mb-64">
         <path fill="url(#d5d4d369-6b90-4398-a6aa-ab9a062d6e3c)" fill-opacity=".25"
           d="M317.219 518.975 203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079Z" />
         <defs>
@@ -38,28 +38,28 @@
           <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">First name</label>
           <div class="mt-2.5">
             <input v-model="firstName" required type="text" name="first-name" id="first-name" autocomplete="given-name"
-              class="block w-full rounded-md border-0 py-2 px-3.5 text-sm leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600" />
+              class="block w-full rounded-md border-0 py-2 px-3.5 text-sm leading-6 text-gray-900 shadow-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600" />
           </div>
         </div>
         <div>
           <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900">Last name</label>
           <div class="mt-2.5">
             <input v-model="lastName" required type="text" name="last-name" id="last-name" autocomplete="family-name"
-              class="block w-full rounded-md border-0 py-2 px-3.5 text-sm leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600" />
+              class="block w-full rounded-md border-0 py-2 px-3.5 text-sm leading-6 text-gray-900 shadow-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600" />
           </div>
         </div>
         <div class="sm:col-span-2">
           <label for="company" class="block text-sm font-semibold leading-6 text-gray-900">Company</label>
           <div class="mt-2.5">
             <input v-model="company" required type="text" name="company" id="company" autocomplete="organization"
-              class="block w-full rounded-md border-0 py-2 px-3.5 text-sm leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600" />
+              class="block w-full rounded-md border-0 py-2 px-3.5 text-sm leading-6 text-gray-900 shadow-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600" />
           </div>
         </div>
         <div class="sm:col-span-2">
           <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">Email</label>
           <div class="mt-2.5">
             <input v-model="email" required type="email" name="email" id="email" autocomplete="email"
-              class="block w-full rounded-md border-0 py-2 px-3.5 text-sm leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600" />
+              class="block w-full rounded-md border-0 py-2 px-3.5 text-sm leading-6 text-gray-900 shadow-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600" />
           </div>
         </div>
         <div class="sm:col-span-2">
@@ -67,16 +67,16 @@
             MePort?</label>
           <div class="mt-2.5">
             <textarea v-model="message" name="message" id="message" rows="4"
-              class="block w-full rounded-md border-0 py-2 px-3.5 text-sm leading-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600" />
+              class="block w-full rounded-md border-0 py-2 px-3.5 text-sm leading-6 text-gray-900 shadow-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600" />
           </div>
         </div>
         <SwitchGroup as="div" class="flex gap-x-4 sm:col-span-2">
           <div class="flex h-6 items-center">
             <Switch v-model="agreed"
-              :class="[agreed ? 'bg-indigo-600' : 'bg-gray-200', 'flex w-8 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600']">
+              :class="[agreed ? 'bg-indigo-600' : 'bg-gray-200', 'flex w-8 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600']">
               <span class="sr-only">Agree to policies</span>
               <span aria-hidden="true"
-                :class="[agreed ? 'translate-x-3.5' : 'translate-x-0', 'h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out']" />
+                :class="[agreed ? 'translate-x-3.5' : 'translate-x-0', 'h-4 w-4 transform rounded-full bg-white shadow-xs ring-1 ring-gray-900/5 transition duration-200 ease-in-out']" />
             </Switch>
           </div>
           <SwitchLabel class="text-sm leading-6 text-gray-600">
@@ -88,7 +88,7 @@
       </div>
       <div class="mt-10">
         <button :disabled="!agreed" type="submit"
-          class="disabled:opacity-40 block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Apply
+          class="disabled:opacity-40 block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Apply
           now</button>
       </div>
     </form>

@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-gradient-to-tr from-blue-500 to-indigo-700" :class="[route.name === 'Home' ? 'h-screen' : '']">
+  <header class="bg-linear-45 from-blue-500 to-indigo-700" :class="[route.name === 'Home' ? 'h-screen' : '']">
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
       <div class="flex lg:flex-1">
         <nuxt-link to="/" class="-m-1.5 p-1.5">
@@ -54,7 +54,7 @@
 
     <div class="relative isolate overflow-hidden" v-if="route.name === 'Home'">
       <svg
-        class="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+        class="absolute inset-0 -z-10 h-full w-full stroke-gray-200 mask-[radial-gradient(100%_100%_at_top_right,white,transparent)]"
         aria-hidden="true">
         <defs>
           <pattern id="0787a7c5-978c-4f66-83c7-11c213f99cb7" width="200" height="200" x="50%" y="-1"
@@ -65,7 +65,7 @@
         <rect width="100%" height="100%" stroke-width="0" fill="url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)" />
       </svg>
       <div class="mx-auto max-w-7xl px-6 pt-10 pb-24 sm:pb-32 lg:flex lg:py-20 lg:px-8">
-        <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
+        <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:shrink-0 lg:pt-8">
           <div class="mt-24 sm:mt-32 lg:mt-16">
             <a href="#" class="inline-flex space-x-6">
               <!-- <span
@@ -77,13 +77,16 @@
               </span>
             </a>
           </div>
-          <h1 class="mt-10 text-4xl font-bold tracking-tight text-neutral-100 sm:text-6xl">Analytics not to <br> worry
-            about.</h1>
-          <p class="mt-6 text-lg leading-8 text-neutral-200">Get privacy-first analytics, performance insights
-            and web vitals for your website or application with our lightweight tools.</p>
+          <h1 class="mt-10 text-4xl font-bold tracking-tight text-neutral-100 sm:text-6xl">
+            One platform for product, dev, marketing, sales — together.
+          </h1>
+          <p class="mt-6 text-lg leading-8 text-neutral-200">
+            Replace 10+ tools with a single, GDPR‑first workspace. Plan roadmaps, track issues and time,
+            run campaigns, and monitor business KPIs — all in one place.
+          </p>
           <div class="mt-10 flex items-center gap-x-6">
             <nuxt-link href="/join-beta"
-              class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-blue-700 shadow-sm hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Join the beta</nuxt-link>
+              class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-blue-700 shadow-xs hover:bg-gray-200 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Join the beta</nuxt-link>
             <!-- <a href="#" class="text-sm font-semibold leading-6 text-gray-100">Learn more <span
                 aria-hidden="true">→</span></a> -->
           </div>
@@ -93,7 +96,7 @@
             <div
               class="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
               <img src="/images/app-screen.png" alt="App screenshot" width="2432"
-                height="1442" class="w-[76rem] rounded-md shadow-2xl ring-1 ring-gray-900/10" />
+                height="1442" class="w-304 rounded-md shadow-2xl ring-1 ring-gray-900/10" />
             </div>
           </div>
         </div>
@@ -153,9 +156,9 @@
         </div>
         <form class="mt-6 sm:flex sm:max-w-md lg:mt-0">
           <label for="email-address" class="sr-only">Email address</label>
-          <input type="email" name="email-address" id="email-address" autocomplete="email" required class="w-full min-w-0 appearance-none rounded-md border-0 bg-white px-3 py-1.5 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:w-56 sm:text-sm sm:leading-6" placeholder="Enter your email" />
-          <div class="mt-4 sm:mt-0 sm:ml-4 sm:flex-shrink-0">
-            <button type="submit" class="flex w-full items-center justify-center rounded-md bg-blue-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Subscribe</button>
+          <input type="email" name="email-address" id="email-address" autocomplete="email" required class="w-full min-w-0 appearance-none rounded-md border-0 bg-white px-3 py-1.5 text-base text-gray-900 shadow-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:w-56 sm:text-sm sm:leading-6" placeholder="Enter your email" />
+          <div class="mt-4 sm:mt-0 sm:ml-4 sm:shrink-0">
+            <button type="submit" class="flex w-full items-center justify-center rounded-md bg-blue-600 py-2 px-3 text-sm font-semibold text-white shadow-xs hover:bg-blue-500 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Subscribe</button>
           </div>
         </form>
       </div>
@@ -171,6 +174,7 @@
     </div>
   </footer>
 </template>
+
 
 <script setup lang="ts">
 import { ref } from 'vue'

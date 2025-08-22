@@ -1,13 +1,11 @@
+import tailwindcss from "@tailwindcss/vite";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: [
-    "@nuxtjs/tailwindcss",
-    "@nuxt/image",
-    "@nuxt/test-utils",
-    "nuxt-icon",
-    "@nuxtjs/sitemap"
-  ],
+  compatibilityDate: "2025-08-22",
+  modules: ["@nuxt/image", "@nuxt/test-utils", "@nuxtjs/sitemap", "@nuxt/icon"],
+  css: ['~/assets/css/main.css'],
   app: {
     head: {
       charset: "utf-8",
@@ -25,5 +23,10 @@ export default defineNuxtConfig({
       //   }
       // ]
     }
+  },
+  vite: {
+    plugins: [
+      tailwindcss()
+    ]
   }
 })

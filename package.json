@@ -8,22 +8,23 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/image": "^1.4.0",
-    "@nuxt/test-utils": "^3.12.0",
+    "@nuxt/icon": "2.0.0",
+    "@nuxt/image": "^1.11.0",
+    "@nuxt/test-utils": "^3.19.2",
     "@nuxtjs/eslint-module": "^4.1.0",
-    "@nuxtjs/robots": "^3.0.0",
-    "@nuxtjs/sitemap": "^5.1.2",
-    "@nuxtjs/tailwindcss": "^6.11.4",
-    "@tailwindcss/forms": "^0.5.3",
-    "@tailwindcss/typography": "^0.5.9",
-    "autoprefixer": "^10.4.14",
-    "nuxt": "^3.4.2",
-    "nuxt-icon": "^0.6.10",
-    "postcss": "^8.4.23",
-    "tailwindcss": "^3.3.1"
+    "@nuxtjs/robots": "^5.5.0",
+    "@nuxtjs/sitemap": "^7.4.3",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "autoprefixer": "^10.4.21",
+    "nuxt": "^4.0.3",
+    "nuxt-icon": "^0.6.10"
   },
   "dependencies": {
-    "@headlessui/vue": "^1.7.13",
-    "@heroicons/vue": "^2.0.17"
+    "@headlessui/vue": "^1.7.23",
+    "@heroicons/vue": "^2.2.0",
+    "@tailwindcss/vite": "^4.1.12",
+    "tailwindcss": "^4.1.12"
   }
 }
