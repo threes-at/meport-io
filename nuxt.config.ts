@@ -24,6 +24,9 @@ export default defineNuxtConfig({
       // ]
     }
   },
+  site: {
+    url: 'meport.netlify.app'
+  },
   vite: {
     plugins: [
       tailwindcss()
